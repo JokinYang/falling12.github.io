@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="一个博客">
 <meta property="og:description" content="Python有很多内置函数，比如map(),filter(),reduce(),sorted() 这些内置函数能够很简洁的完成一些需求，学习这些函数的用法能大大提高开发效率逼格Tips：可用help函数查看这些函数的官方文档 如：help(map) Python中的“三目运算符”在C语言和Java中三目运算符是个简洁、好用的运算符，但是在Python中并不能直接使用这种三目运算符1234int a">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-01T10:00:25.920Z">
+<meta property="og:updated_time" content="2018-01-07T12:46:05.698Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 内置函数">
 <meta name="twitter:description" content="Python有很多内置函数，比如map(),filter(),reduce(),sorted() 这些内置函数能够很简洁的完成一些需求，学习这些函数的用法能大大提高开发效率逼格Tips：可用help函数查看这些函数的官方文档 如：help(map) Python中的“三目运算符”在C语言和Java中三目运算符是个简洁、好用的运算符，但是在Python中并不能直接使用这种三目运算符1234int a">
@@ -337,11 +337,14 @@
 </blockquote>
 <p>filter和map函数相似，接收一个函数句柄和一个可迭代对象，将可迭代对象的元素以此传入函数中，若满足则将该值加入返回值的集合中，若不满足则将其剔除<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a=[<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br><span class="line"><span class="comment">#判断传入数据是否大于5</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">judge</span><span class="params">(num)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> num&gt;<span class="number">5</span></span><br><span class="line">ans=filter(judge,a)</span><br><span class="line">print([x <span class="keyword">for</span> x <span class="keyword">in</span> iter(ans)])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br></pre></td></tr></table></figure></p>
 <p>可见用filter函数过滤数据很是方便</p>
-<h1 id="reduce"><a href="#reduce" class="headerlink" title="reduce()"></a>reduce()</h1><p>tips:在Python3中需from functools import reduce<br>不知道怎么描述这个函数的用法，直接看官方的帮助吧</p>
+<h1 id="reduce"><a href="#reduce" class="headerlink" title="reduce()"></a>reduce()</h1><p>不知道怎么描述这个函数的用法，直接看官方的帮助吧</p>
 <blockquote>
 <p>reduce(function, sequence[, initial]) -&gt; value<br>Apply a function of two arguments cumulatively to the items of a sequence,<br>from left to right, so as to reduce the sequence to a single value.<br>For example, reduce(lambda x, y: x+y, [1, 2, 3, 4, 5]) calculates<br>((((1+2)+3)+4)+5).  If initial is present, it is placed before the items<br>of the sequence in the calculation, and serves as a default when the sequence is empty.</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#实现元素的累加,reduce是将列表的第一个和第二个元素传入add中，并将返回的值和下一个元素一起传入，直到列表的元素都传入过。</span></span><br><span class="line">a=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(x,y)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> x+y</span><br><span class="line"></span><br><span class="line">reduce(add,a)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">15</span></span><br><span class="line"><span class="comment">#传入三个参数时，传入三个参数时，将第三个函数和列表的第一个函数传入add中，并将返回的值和下一个元素一起传入，直到列表的元素都传入过。</span></span><br><span class="line">reduce(add,a,<span class="number">100</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">115</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>tips:在Python3中需from functools import reduce</p>
+</blockquote>
 <h1 id="sorted"><a href="#sorted" class="headerlink" title="sorted()"></a>sorted()</h1><p>sorted是一个内置的排序函数</p>
 <blockquote>
 <p>sorted(iterable, cmp=None, key=None, reverse=False) –&gt; new sorted list</p>
@@ -397,8 +400,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/12/26/Haroopad快捷键/" rel="prev" title="Haroopad快捷键">
-                Haroopad快捷键 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/02/Python-小技巧/" rel="prev" title="Python 小技巧">
+                Python 小技巧 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -481,7 +484,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

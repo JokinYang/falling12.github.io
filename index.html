@@ -229,7 +229,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://falling12.github.io/2017/12/26/Haroopad快捷键/">
+    <link itemprop="mainEntityOfPage" href="http://falling12.github.io/2018/04/23/百度网盘网页api分析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jokin">
@@ -248,7 +248,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/26/Haroopad快捷键/" itemprop="url">Haroopad快捷键</a></h1>
+                <a class="post-title-link" href="/2018/04/23/百度网盘网页api分析/" itemprop="url">百度网盘网页api分析</a></h1>
         
 
         <div class="post-meta">
@@ -260,8 +260,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-26T22:34:34+08:00">
-                2017-12-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-23T22:18:26+08:00">
+                2018-04-23
               </time>
             
 
@@ -279,8 +279,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/12/26/Haroopad快捷键/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/12/26/Haroopad快捷键/" itemprop="commentCount"></span>
+                <a href="/2018/04/23/百度网盘网页api分析/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/23/百度网盘网页api分析/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -310,37 +310,155 @@
       
         
           
-          Shortcuts
+          百度网盘在进行文件请求时必要的两个cookies：
 
+BDUSS
+STOKEN
 
-GLYPH
-NAME
-
-
-
-
-COMMAND
-Command, Cmd, Clover, (formerly) Apple
-
-
-ALT
-Option, Opt, (Windows) Alt
-
-
-SHIFT
-Shift
-
-
-CTRL
-Control, Ctl, Ctrl
-
-
-
-
+STOKEN获取方式url-&gt;https://pcsdata.baidu.com/rest/2.0/pcs/file?method=plantcookie&amp;type=stoken&amp;source=p
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/26/Haroopad快捷键/#more" rel="contents">
+            <a class="btn" href="/2018/04/23/百度网盘网页api分析/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://falling12.github.io/2018/04/02/Python-小技巧/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jokin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="一个博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/02/Python-小技巧/" itemprop="url">Python 小技巧</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-02T21:49:26+08:00">
+                2018-04-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/02/Python-小技巧/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/02/Python-小技巧/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          python 小技巧list 下标溢出相信大家在日常使用list的时候会遇到list的下标溢出而报错，不捕捉这种错误会使程序崩溃，
+但加上try expect之后程序会显得臃肿 主要是懒 。
+在这里介绍一种超出list的下标之后不会报错的方法
+1234567891011121314x=[0,1,2,
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/02/Python-小技巧/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1122,7 +1240,7 @@ nihaonishishei
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
