@@ -79,18 +79,15 @@
 
 
 
-<meta name="description" content="python 小技巧list 下标溢出相信大家在日常使用list的时候会遇到list的下标溢出而报错，不捕捉这种错误会使程序崩溃， 但加上try expect之后程序会显得臃肿 主要是懒 。 在这里介绍一种超出list的下标之后不会报错的方法 1234567891011121314x=[0,1,2,3]x[0] # 0">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python 小技巧">
-<meta property="og:url" content="http://blog.fallingboy.cn/2018/04/02/Python-小技巧/index.html">
+<meta property="og:title" content="Python装饰器">
+<meta property="og:url" content="http://blog.fallingboy.cn/2018/01/25/Python装饰器/index.html">
 <meta property="og:site_name" content="一个博客">
-<meta property="og:description" content="python 小技巧list 下标溢出相信大家在日常使用list的时候会遇到list的下标溢出而报错，不捕捉这种错误会使程序崩溃， 但加上try expect之后程序会显得臃肿 主要是懒 。 在这里介绍一种超出list的下标之后不会报错的方法 1234567891011121314x=[0,1,2,3]x[0] # 0x[4] #会报错x[0:2] # [0,1]x[0:1] # [0]x[4:5">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-08T15:23:25.044Z">
+<meta property="og:updated_time" content="2018-05-08T15:24:19.964Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python 小技巧">
-<meta name="twitter:description" content="python 小技巧list 下标溢出相信大家在日常使用list的时候会遇到list的下标溢出而报错，不捕捉这种错误会使程序崩溃， 但加上try expect之后程序会显得臃肿 主要是懒 。 在这里介绍一种超出list的下标之后不会报错的方法 1234567891011121314x=[0,1,2,3]x[0] # 0x[4] #会报错x[0:2] # [0,1]x[0:1] # [0]x[4:5">
+<meta name="twitter:title" content="Python装饰器">
 
 
 
@@ -120,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.fallingboy.cn/2018/04/02/Python-小技巧/"/>
+  <link rel="canonical" href="http://blog.fallingboy.cn/2018/01/25/Python装饰器/"/>
 
 
 
 
 
-  <title>Python 小技巧 | 一个博客</title>
+  <title>Python装饰器 | 一个博客</title>
   
 
 
@@ -253,7 +250,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.fallingboy.cn/2018/04/02/Python-小技巧/">
+    <link itemprop="mainEntityOfPage" href="http://blog.fallingboy.cn/2018/01/25/Python装饰器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jokin">
@@ -270,7 +267,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Python 小技巧</h2>
+          <h2 class="post-title" itemprop="name headline">Python装饰器</h2>
         
 
         <div class="post-meta">
@@ -282,8 +279,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-02T21:49:26+08:00">
-                2018-04-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-25T21:14:59+08:00">
+                2018-01-25
               </time>
             
 
@@ -301,8 +298,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/02/Python-小技巧/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/02/Python-小技巧/" itemprop="commentCount"></span>
+                <a href="/2018/01/25/Python装饰器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/01/25/Python装饰器/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -330,10 +327,7 @@
       
 
       
-        <h1 id="python-小技巧"><a href="#python-小技巧" class="headerlink" title="python 小技巧"></a>python 小技巧</h1><h2 id="list-下标溢出"><a href="#list-下标溢出" class="headerlink" title="list 下标溢出"></a>list 下标溢出</h2><p>相信大家在日常使用list的时候会遇到list的下标溢出而报错，不捕捉这种错误会使程序崩溃，</p>
-<p>但加上try expect之后程序会显得臃肿 <del>主要是懒</del> 。</p>
-<p>在这里介绍一种超出list的下标之后不会报错的方法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">x=[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">x[<span class="number">0</span>] <span class="comment"># 0</span></span><br><span class="line"></span><br><span class="line">x[<span class="number">4</span>] <span class="comment">#会报错</span></span><br><span class="line"></span><br><span class="line">x[<span class="number">0</span>:<span class="number">2</span>] <span class="comment"># [0,1]</span></span><br><span class="line"></span><br><span class="line">x[<span class="number">0</span>:<span class="number">1</span>] <span class="comment"># [0]</span></span><br><span class="line"></span><br><span class="line">x[<span class="number">4</span>:<span class="number">5</span>] <span class="comment">#[]</span></span><br><span class="line"></span><br><span class="line">ans=x[<span class="number">4</span>:<span class="number">5</span>][<span class="number">0</span>] <span class="keyword">if</span> x[<span class="number">4</span>:<span class="number">5</span>] <span class="keyword">else</span> <span class="string">''</span> <span class="comment"># ans为空</span></span><br></pre></td></tr></table></figure>
+        
       
     </div>
     
@@ -378,8 +372,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/25/Python装饰器/" rel="next" title="Python装饰器">
-                <i class="fa fa-chevron-left"></i> Python装饰器
+              <a href="/2017/12/26/Python-内置函数/" rel="next" title="Python 内置函数">
+                <i class="fa fa-chevron-left"></i> Python 内置函数
               </a>
             
           </div>
@@ -388,8 +382,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/23/百度网盘网页api分析/" rel="prev" title="百度网盘网页api分析">
-                百度网盘网页api分析 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/02/Python-小技巧/" rel="prev" title="Python 小技巧">
+                Python 小技巧 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -447,17 +441,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -524,22 +509,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#python-小技巧"><span class="nav-number">1.</span> <span class="nav-text">python 小技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#list-下标溢出"><span class="nav-number">1.1.</span> <span class="nav-text">list 下标溢出</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
